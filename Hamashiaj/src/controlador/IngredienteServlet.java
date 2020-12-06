@@ -109,7 +109,7 @@ public class IngredienteServlet extends HttpServlet {
 			Ingrediente aux = iDAO.find(id);
 			i.setId(id);
 			iDAO.delete(aux);
-			request.getRequestDispatcher("lista.jsp").forward(request, response);
+			request.getRequestDispatcher("listaIngrediente.jsp").forward(request, response);
 		}
 
 		protected void actualizar(HttpServletRequest request, HttpServletResponse response)
@@ -123,7 +123,7 @@ public class IngredienteServlet extends HttpServlet {
 			i.setTipoingrediente(t);
 			// eDAO.update(obj);
 			iDAO.update(i);
-			request.getRequestDispatcher("lista.jsp").forward(request, response);
+			request.getRequestDispatcher("listaIngrediente.jsp").forward(request, response);
 		}
 
 		protected void showForm(HttpServletRequest request, HttpServletResponse response)

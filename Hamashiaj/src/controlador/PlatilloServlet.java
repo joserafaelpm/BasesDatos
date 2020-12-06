@@ -99,35 +99,37 @@ public class PlatilloServlet extends HttpServlet {
 
 		protected void eliminar(HttpServletRequest request, HttpServletResponse response)
 				throws ServletException, IOException {
-			Integer id = Integer.parseInt(request.getParameter("cedula"));
+			Integer id = Integer.parseInt(request.getParameter("id"));
 			Platillo p = new Platillo();
 			Platillo aux = pDAO.find(id);
 			p.setId(id);
 			pDAO.delete(aux);
-			request.getRequestDispatcher("lista.jsp").forward(request, response);
+			request.getRequestDispatcher("listaPlatillo.jsp").forward(request, response);
 		}
 
 		protected void actualizar(HttpServletRequest request, HttpServletResponse response)
 				throws ServletException, IOException {
 			// TODO Auto-generated method stub
+			Integer id = Integer.parseInt(request.getParameter("id"));
 			String nombre = request.getParameter("nombre");
 			Float precio = Float.parseFloat(request.getParameter("precio"));
 			String descripcion = request.getParameter("descripcion");
 			String url = request.getParameter("url");
 			Platillo p = new Platillo();
+			p.setId(id);
 			p.setNombre(nombre);
 			p.setPrecio(precio);
 			p.setDescripcion(descripcion);
 			p.setUrlImagen(url);
 			// eDAO.update(obj);
 			pDAO.update(p);
-			request.getRequestDispatcher("lista.jsp").forward(request, response);
+			request.getRequestDispatcher("listaPlatillo.jsp").forward(request, response);
 		}
 
 		protected void showForm(HttpServletRequest request, HttpServletResponse response)
 				throws ServletException, IOException {
 			// TODO Auto-generated method stub
-			Integer id = Integer.parseInt(request.getParameter("cedula"));
+			Integer id = Integer.parseInt(request.getParameter("id"));
 			Platillo p = new Platillo();
 			p.setId(id);
 			Platillo aux = pDAO.find(p.getId());

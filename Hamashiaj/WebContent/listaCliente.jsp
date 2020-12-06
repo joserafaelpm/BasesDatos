@@ -10,28 +10,20 @@
 <title>Heroes</title>
 </head>
 <body>
-<jsp:useBean class="modelo.PersonaDAO" id = "personaDAO" ></jsp:useBean>
+<jsp:useBean class="modelo.ClienteDAO" id = "clienteDAO" ></jsp:useBean>
 <h1><b>Lista Persona</b></h1>
   	<table class="table">
   <thead>
     <tr>
       <th scope="col">Cedula</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Direccion</th>
-      <th scope="col">Telefono</th>
-      <th scope="col">Genero</th>
     </tr>
   </thead>
   <tbody>
-  <c:forEach items="${personaDAO.list()}" var = "persona" >
+  <c:forEach items="${clienteDAO.list()}" var = "cliente" >
     <tr>
-      <td><c:out value="${persona.cedula}" /></td>
-      <td><c:out value="${persona.nombre}" /></td>
-      <td><c:out value="${persona.direccion}" /></td>
-      <td><c:out value="${persona.telefono}" /></td>
-      <td><c:out value="${persona.genero}" /></td>
-      <td><a href="PersonaServlet?action=eliminar&cedula=${persona.cedula}">Eliminar</a></td>
-      <td><a href="PersonaServlet?action=mostrar&cedula=${persona.cedula}">Editar</a></td>
+      <td><c:out value="${cliente.cedula}" /></td>
+      <td><a href="ClienteServlet?action=eliminar&cedula=${cliente.cedula}">Eliminar</a></td>
+      <td><a href="ClienteServlet?action=mostrar&cedula=${cliente.cedula}">Editar</a></td>
     </tr>
  </c:forEach>
   </tbody>

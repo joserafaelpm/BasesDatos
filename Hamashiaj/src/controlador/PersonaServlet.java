@@ -108,7 +108,7 @@ public class PersonaServlet extends HttpServlet {
 		Persona aux = pDAO.find(cedula);
 		p.setCedula(cedula);
 		pDAO.delete(aux);
-		request.getRequestDispatcher("lista.jsp").forward(request, response);
+		request.getRequestDispatcher("listaPersona.jsp").forward(request, response);
 	}
 	
 	protected void actualizar(HttpServletRequest request, HttpServletResponse response)
@@ -127,7 +127,7 @@ public class PersonaServlet extends HttpServlet {
 		p.setTelefono(telefono);
 		// eDAO.update(obj);
 		pDAO.update(p);
-		request.getRequestDispatcher("lista.jsp").forward(request, response);
+		request.getRequestDispatcher("listaPersona.jsp").forward(request, response);
 	}
 
 	protected void showForm(HttpServletRequest request, HttpServletResponse response)

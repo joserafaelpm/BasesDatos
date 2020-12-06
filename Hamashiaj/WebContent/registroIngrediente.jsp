@@ -40,6 +40,7 @@
     <label for="inputEmail3" class="col-sm-2 col-form-label">Tipo de ingrediente:</label>
     <div class="col-sm-10">
     <select class="form-control" id="exampleFormControlSelect1" name="tipoingredienteid">
+    <option value = "${ingredidiente.tipoingrediente.getId()}" > <c:out value="${ingrediente.tipoingrediente.getDescripcion()} "/> </option>
 		   <c:forEach items="${tipoingredienteDAO.list()}" var="tipoingrediente">
 				<option value="${tipoingrediente.id}" >
          <c:out value="${tipoingrediente.descripcion} "/>

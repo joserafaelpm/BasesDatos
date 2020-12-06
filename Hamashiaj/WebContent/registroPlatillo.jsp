@@ -31,28 +31,28 @@
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre:</label>
     <div class="col-sm-10">
-      <input type="text" name="nombre" value="${persona.cedula}"  class="form-control">
+      <input type="text" name="nombre" value="${platillo.nombre}"  class="form-control">
     </div>
   </div>
   
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">precio:</label>
     <div class="col-sm-10">
-      <input type="number" name="precio" value="${persona.nombre}"  class="form-control">
+      <input type="number" name="precio" value="${platillo.precio}"  class="form-control">
     </div>
   </div>
   
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Descripcion:</label>
     <div class="col-sm-10">
-      <input type="text" name="descripcion" value="${persona.direccion}"  class="form-control">
+      <input type="text" name="descripcion" value="${platillo.descripcion}"  class="form-control">
     </div>
   </div>
   
    <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Url Imagen:</label>
     <div class="col-sm-10">
-      <input type="text" name="url" value="${persona.telefono}"  class="form-control">
+      <input type="text" name="url" value="${platillo.urlImagen}"  class="form-control">
     </div>
   </div> 
   

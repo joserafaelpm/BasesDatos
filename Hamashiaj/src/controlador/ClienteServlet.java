@@ -118,7 +118,7 @@ public class ClienteServlet extends HttpServlet {
 		c.setPersona(p);
 		// eDAO.update(obj);
 		cDAO.update(c);
-		request.getRequestDispatcher("lista.jsp").forward(request, response);
+		request.getRequestDispatcher("listaCliente.jsp").forward(request, response);
 	}
 
 	protected void showForm(HttpServletRequest request, HttpServletResponse response)
