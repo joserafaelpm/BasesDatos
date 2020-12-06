@@ -21,8 +21,8 @@ public class Ordenplatillo implements Serializable {
 	private float precio;
 
 	//bi-directional many-to-one association to Orden
-	@ManyToOne
 	@JoinColumn(name="orden_id", insertable=false, updatable=false)
+	@ManyToOne
 	private Orden orden;
 
 	//bi-directional many-to-one association to Platillo

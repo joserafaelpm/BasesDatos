@@ -15,60 +15,49 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
   </script>
-<title> Registro de Personas</title>
+<title> Registro de Propina</title>
 </head>
 <body>
-<h1><b>Registro De Personas</b></h1>
-<c:if test="${persona != null}">
+<jsp:useBean id="fechaActual" class="java.util.Date"/>
+<jsp:useBean class="modelo.CamareroDAO" id="camareroDAO"></jsp:useBean>
+<h1><b>Registro de Propina</b></h1>
+<c:if test="${propina != null}">
                            <%--  <form action="${pageContext.request.contextPath}/ActualizarEmpleado?accion=edita&codigo=${empleado.codigo}"  method="post"> --%>
-                           <form action="PersonaServlet?action=actualizar&id=${persona.cedula}"  method="POST">
+                           <form action="PropinaServlet?action=actualizar&id=${propina.id}"  method="POST">
                         </c:if>
-                        <c:if test="${persona == null}">
+                        <c:if test="${propina == null}">
                            <%--  <form action="${pageContext.request.contextPath}/AgregarEmpleado?accion=agregar&codigo=${empleado.codigo}"  method="POST"> --%>
-                            <form action="PersonaServlet?action=registrar"  method="POST">
+                            <form action="PropinaServlet?action=registrar"  method="POST">
                         </c:if>
 
   <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Cedula:</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Fecha y Hora:</label>
     <div class="col-sm-10">
-      <input type="text" name="cedula" value="${persona.cedula}"  class="form-control">
+      <input type="Date" name="fechahora" value="${ingrediente.nombre}"  class="form-control">
+    </div>
+  </div>
+  
+    <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Propina:</label>
+    <div class="col-sm-10">
+      <input type="Number" name="propina" value="${propina.propina}"  class="form-control">
     </div>
   </div>
   
   <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre:</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Camarero Id:</label>
     <div class="col-sm-10">
-      <input type="text" name="nombre" value="${persona.nombre}"  class="form-control">
-    </div>
-  </div>
-  
-  <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Direccion:</label>
-    <div class="col-sm-10">
-      <input type="text" name="direccion" value="${persona.direccion}"  class="form-control">
-    </div>
-  </div>
-  
-   <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Telefono:</label>
-    <div class="col-sm-10">
-      <input type="text" name="telefono" value="${persona.telefono}"  class="form-control">
-    </div>
-  </div>
-  
-  
-	    <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Genero:</label>
-    <div class="col-sm-10">
-    <select class="form-control" id="exampleFormControlSelect1" name="genero">
-			<option value = "${persona.genero}" > <c:out value="${persona.genero} "/> </option>
-			<option >Hombre</option>
-			<option>Mujer</option>
-			<option >Otro</option>
+    <select class="form-control" id="exampleFormControlSelect1" name="camareroid">
+    <option value = "${camarero.id}" > <c:out value="${camarero.id} "/> </option>
+		   <c:forEach items="${camareroDAO.list()}" var="camarero">
+				<option value="${camarero.id}" >
+         <c:out value="${camarero.id} "/>
+         </option>
+         </c:forEach>
         </select>
     </div>
-  </div> 
-   
+  </div>
+
   <div class="form-group row">
     <div class="col-sm-10">
       <button type="submit" class="btn btn-primary">Registrar</button>

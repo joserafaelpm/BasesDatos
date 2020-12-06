@@ -15,43 +15,33 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
   </script>
-<title> Registro de Clientes</title>
+<title> Registro de Chef</title>
 </head>
 <body>
-<jsp:useBean class="modelo.PersonaDAO" id="personaDAO"></jsp:useBean>
-<h1><b>Registro de Clientes</b></h1>
-<c:if test="${empleado != null}">
+<jsp:useBean class="modelo.EmpleadoDAO" id="empleadoDAO"></jsp:useBean>
+<h1><b>Registro de Chef</b></h1>
+<c:if test="${chef != null}">
                            <%--  <form action="${pageContext.request.contextPath}/ActualizarEmpleado?accion=edita&codigo=${empleado.codigo}"  method="post"> --%>
-                           <form action="EmpleadoServlet?action=actualizar&id=${empleado.id}"  method="POST">
+                           <form action="ChefServlet?action=actualizar&id=${chef.id}"  method="POST">
                         </c:if>
-                        <c:if test="${empleado == null}">
+                        <c:if test="${chef == null}">
                            <%--  <form action="${pageContext.request.contextPath}/AgregarEmpleado?accion=agregar&codigo=${empleado.codigo}"  method="POST"> --%>
-                            <form action="EmpleadoServlet?action=registrar"  method="POST">
+                            <form action="ChefServlet?action=registrar"  method="POST">
                         </c:if>
 
   <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Cedula:</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Id:</label>
     <div class="col-sm-10">
-    <select class="form-control" id="exampleFormControlSelect1" name="cedula">
-		   <c:forEach items="${personaDAO.list()}" var="persona">
-				<option value="${persona.cedula}" >
-         <c:out value="${persona.nombre} "/>
+    <select class="form-control" id="exampleFormControlSelect1" name="id">
+		   <c:forEach items="${empleadoDAO.list()}" var="empleado">
+				<option value="${empleado.id}" >
+         <c:out value="${empleado.persona.getCedula()}"/> <c:out value="${empleado.cargo}"/>
          </option>
          </c:forEach>
         </select>
     </div>
   </div>
-  
-    <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Cargo:</label>
-    <div class="col-sm-10">
-    <select class="form-control" id="exampleFormControlSelect1" name="cargo">
-			<option value = "${empleado.cargo}" > <c:out value="${empleado.cargo} "/> </option>
-			<option >Camarero</option>
-			<option>Chef</option>
-        </select>
-    </div>
-  </div>
+ 
 
   <div class="form-group row">
     <div class="col-sm-10">
@@ -59,6 +49,7 @@
      <a href="${pageContext.request.contextPath}/buscar.jsp" class="btn btn-primary">Volver</a>
     </div>
     </div>
+  
 </form>
 </body>
 </html>

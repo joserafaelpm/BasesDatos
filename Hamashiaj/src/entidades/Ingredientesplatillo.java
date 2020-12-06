@@ -17,14 +17,15 @@ public class Ingredientesplatillo implements Serializable {
 	private IngredientesplatilloPK id;
 
 	private int peso;
-	@JoinColumn(name="ingrediente_id", insertable=false, updatable=false)
+
 	//bi-directional many-to-one association to Ingrediente
-	@ManyToOne(optional=false)
+	@JoinColumn(name="ingrediente_id", insertable=false, updatable=false)
+	@ManyToOne
 	private Ingrediente ingrediente;
 
-	@JoinColumn(name="platillo_id", insertable=false, updatable=false)
 	//bi-directional many-to-one association to Platillo
-	@ManyToOne(optional=false)
+	@JoinColumn(name="platillo_id", insertable=false, updatable=false)
+	@ManyToOne
 	private Platillo platillo;
 
 	public Ingredientesplatillo() {

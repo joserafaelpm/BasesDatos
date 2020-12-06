@@ -17,6 +17,10 @@ public class Orden implements Serializable {
 	@Id
 	private int id;
 
+	//bi-directional many-to-one association to Factura
+	@OneToMany(mappedBy="orden")
+	private List<Factura> facturas;
+
 	//bi-directional many-to-one association to Camarero
 	@ManyToOne
 	private Camarero camarero;
@@ -34,10 +38,6 @@ public class Orden implements Serializable {
 	@ManyToOne
 	private Domicilio domicilio;
 
-	//bi-directional many-to-one association to Factura
-	@ManyToOne
-	private Factura factura;
-
 	//bi-directional many-to-one association to Ordenplatillo
 	@OneToMany(mappedBy="orden")
 	private List<Ordenplatillo> ordenplatillos;
@@ -51,6 +51,28 @@ public class Orden implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public List<Factura> getFacturas() {
+		return this.facturas;
+	}
+
+	public void setFacturas(List<Factura> facturas) {
+		this.facturas = facturas;
+	}
+
+	public Factura addFactura(Factura factura) {
+		getFacturas().add(factura);
+		factura.setOrden(this);
+
+		return factura;
+	}
+
+	public Factura removeFactura(Factura factura) {
+		getFacturas().remove(factura);
+		factura.setOrden(null);
+
+		return factura;
 	}
 
 	public Camarero getCamarero() {
@@ -83,14 +105,6 @@ public class Orden implements Serializable {
 
 	public void setDomicilio(Domicilio domicilio) {
 		this.domicilio = domicilio;
-	}
-
-	public Factura getFactura() {
-		return this.factura;
-	}
-
-	public void setFactura(Factura factura) {
-		this.factura = factura;
 	}
 
 	public List<Ordenplatillo> getOrdenplatillos() {

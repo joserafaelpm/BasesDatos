@@ -2,7 +2,6 @@ package entidades;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -24,8 +23,8 @@ public class Factura implements Serializable {
 	private float total;
 
 	//bi-directional many-to-one association to Orden
-	@OneToMany(mappedBy="factura")
-	private List<Orden> ordens;
+	@ManyToOne
+	private Orden orden;
 
 	public Factura() {
 	}
@@ -62,26 +61,12 @@ public class Factura implements Serializable {
 		this.total = total;
 	}
 
-	public List<Orden> getOrdens() {
-		return this.ordens;
+	public Orden getOrden() {
+		return this.orden;
 	}
 
-	public void setOrdens(List<Orden> ordens) {
-		this.ordens = ordens;
-	}
-
-	public Orden addOrden(Orden orden) {
-		getOrdens().add(orden);
-		orden.setFactura(this);
-
-		return orden;
-	}
-
-	public Orden removeOrden(Orden orden) {
-		getOrdens().remove(orden);
-		orden.setFactura(null);
-
-		return orden;
+	public void setOrden(Orden orden) {
+		this.orden = orden;
 	}
 
 }

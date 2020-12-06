@@ -13,7 +13,6 @@ import java.util.List;
 @NamedQuery(name="Ingrediente.findAll", query="SELECT i FROM Ingrediente i")
 public class Ingrediente implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private int id;

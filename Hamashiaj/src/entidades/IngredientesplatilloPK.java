@@ -12,10 +12,10 @@ public class IngredientesplatilloPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="ingrediente_id")
+	@Column(name="ingrediente_id", insertable=false, updatable=false)
 	private int ingredienteId;
 
-	@Column(name="platillo_id")
+	@Column(name="platillo_id", insertable=false, updatable=false)
 	private int platilloId;
 
 	public IngredientesplatilloPK() {

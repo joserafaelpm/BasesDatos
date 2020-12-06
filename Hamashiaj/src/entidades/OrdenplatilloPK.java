@@ -12,10 +12,10 @@ public class OrdenplatilloPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="orden_id", insertable=true, updatable=true)
+	@Column(name="orden_id", insertable=false, updatable=false)
 	private int ordenId;
 
-	@Column(name="platillo_id", insertable=true, updatable=true)
+	@Column(name="platillo_id", insertable=false, updatable=false)
 	private int platilloId;
 
 	public OrdenplatilloPK() {
