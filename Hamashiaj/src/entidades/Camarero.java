@@ -13,7 +13,7 @@ import java.util.List;
 @NamedQuery(name="Camarero.findAll", query="SELECT c FROM Camarero c")
 public class Camarero implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private int id;
 

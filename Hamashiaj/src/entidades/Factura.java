@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NamedQuery(name="Factura.findAll", query="SELECT f FROM Factura f")
 public class Factura implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private int id;
 

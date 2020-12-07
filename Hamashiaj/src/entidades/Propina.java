@@ -13,7 +13,7 @@ import java.util.Date;
 @NamedQuery(name="Propina.findAll", query="SELECT p FROM Propina p")
 public class Propina implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechahora;

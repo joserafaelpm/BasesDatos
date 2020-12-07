@@ -13,7 +13,7 @@ import java.util.List;
 @NamedQuery(name="Chef.findAll", query="SELECT c FROM Chef c")
 public class Chef implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private int id;
 

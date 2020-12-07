@@ -13,7 +13,7 @@ import java.util.List;
 @NamedQuery(name="Orden.findAll", query="SELECT o FROM Orden o")
 public class Orden implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private int id;
 

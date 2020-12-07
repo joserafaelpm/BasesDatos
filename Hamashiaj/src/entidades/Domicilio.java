@@ -13,7 +13,7 @@ import java.util.List;
 @NamedQuery(name="Domicilio.findAll", query="SELECT d FROM Domicilio d")
 public class Domicilio implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private int id;
 
