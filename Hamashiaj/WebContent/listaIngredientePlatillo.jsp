@@ -16,7 +16,6 @@
   	<table class="table">
   <thead>
     <tr>
-      <th scope="col">Id</th>
       <th scope="col">Id Ingrediente</th>
       <th scope="col">Id Platillo</th>
       <th scope="col">Peso</th>
@@ -25,12 +24,9 @@
   <tbody>
   <c:forEach items="${ingredienteplatilloDAO.list()}" var = "ingredienteplatillo" >
     <tr>
-      <td><c:out value="${ingredienteplatillo.id}" /></td>
       <td><c:out value="${ingredienteplatillo.ingrediente.getNombre()}" /></td>
       <td><c:out value="${ingredienteplatillo.platillo.getNombre()}" /></td>
       <td><c:out value="${ingredienteplatillo.peso}" /></td>
-      <td><a href="IngredientePlatilloServlet?action=eliminar&id=${ingredienteplatillo.id}">Eliminar</a></td>
-      <td><a href="IngredientePlatilloServlet?action=mostrar&id=${ingredienteplatillo.id}">Editar</a></td>
     </tr>
  </c:forEach>
   </tbody>

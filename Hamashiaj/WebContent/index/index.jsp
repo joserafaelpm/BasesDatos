@@ -60,76 +60,84 @@
 		<h1>
 			<b>Camarero</b>
 		</h1>
-		<div class="form-group row">
-			<div class="col-sm-10">
-				<a href="${pageContext.request.contextPath}/buscarPersona.jsp"
-					class="btn btn-primary">Buscar Persona</a> <a
-					href="${pageContext.request.contextPath}/registroPersona.jsp"
-					class="btn btn-primary">Registrar Persona</a> <a
-					href="${pageContext.request.contextPath}/listaPersona.jsp"
-					class="btn btn-primary">Lista De Personas</a> <a
-					href="${pageContext.request.contextPath}/registroCliente.jsp"
-					class="btn btn-primary">Registro Cliente</a>
+		<div class="dropdown">
+  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Opciones de Camarero
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/buscarPersona.jsp">Buscar Persona</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/registroPersona.jsp">Registrar Persona</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/listaPersona.jsp">Lista De Personas</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/buscarCliente.jsp">Buscar Cliente</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/registroCliente.jsp">Registrar Cliente</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/listaCliente.jsp">Lista De Cliente</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/buscarOrden.jsp">Buscar Orden</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/registroOrden.jsp">Registrar Orden</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/listaOrden.jsp">Lista De Orden</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/buscarEmpleado.jsp">Buscar Empleado</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/registroEmpleado.jsp">Registrar Empleado</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/listaEmpleado.jsp">Lista De Empleado</a>
+    
+  </div>
+</div>	
+		<h1 class = "m-1"><b>Chef</b></h1>
+				
+		<div class="dropdown">
+  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Opciones de Chef
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/buscarIngrediente.jsp">Buscar Ingrediente</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/registroIngrediente.jsp">Registrar Ingrediente</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/listaIngrediente.jsp">Lista De Ingrediente</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/buscarTipoDeIngrediente.jsp">Buscar Tipo de ingrediente</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/registroTipoDeIngrediente.jsp">Registrar Tipo de Ingrediente</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/listaTipoDeIngrediente.jsp">Lista De Tipos de Ingrediente</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/buscarPlatillo.jsp">Buscar Platillo</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/registroPlatillo.jsp">Registrar Platillo</a>
+    <a class="dropdown-item" href="${pageContext.request.contextPath}/listaPlatillo.jsp">Lista De Platillo</a>
+    
+  </div>
+</div>
+</div>
 
-
-
-				<h1>
-					<b>Chef</b>
-				</h1>
-				<a href="${pageContext.request.contextPath}/buscarIngrediente.jsp"
-					class="btn btn-primary">Buscar Ingrediente</a> <a
-					href="${pageContext.request.contextPath}/registroIngrediente.jsp"
-					class="btn btn-primary">Registrar Ingrediente</a> <a
-					href="${pageContext.request.contextPath}/listaIngrediente.jsp"
-					class="btn btn-primary">Lista De Ingrediente</a> <a
-					href="${pageContext.request.contextPath}/buscarIngrediente.jsp"
-					class="btn btn-primary m-1">Buscar Tipo de ingrediente</a> <a
-					href="${pageContext.request.contextPath}/registroTipoDeIngrediente.jsp"
-					class="btn btn-primary m-1">Registrar Tipo de Ingrediente</a> <a
-					href="${pageContext.request.contextPath}/listaIngrediente.jsp"
-					class="btn btn-primary m-1">Lista De Tipos de Ingrediente</a>
-			</div>
-		</div>
-	</div>
-
+						
 	<footer class="footer">
-		<section id="bajo">
-			<div class="container-fluid foter">
-				<div class="row">
-					<div class="col">
-						<h1 class="page-header">Información de contacto</h1>
-						<p>Email: elpapeme@gmail.com</p>
-						<p>Teléfono de contacto: 318 6943404</p>
-					</div>
-					<div class="col-2">
-						<ul class="icon">
-							<li><a href="https://web.facebook.com/COMIDAFAMILIAFE">
-									<i class="fa fa-facebook"></i>
-							</a></li>
-							<li><a href=""> <i class="fa fa-twitter"></i>
-							</a></li>
-							<li><a href="https://www.gram.com/hamashiaj.food/?hl=es-la">
-									<i class="fa fa-instagram"></i>
-							</a></li>
-						</ul>
-						<div class="contact">
-							<a
-								href="https://api.whatsapp.com/send?phone=573186943404&text=Hola%20Elda%20y%20Freddy%20tengo%20inter%C3%A9s%20en%20hacer%20un%20pedido%20a%20domicilio,%20mi%20nombre%20es">
-								<button class="btn btn-primary">Contactanos</button>
-							</a>
-						</div>
-					</div>
-					<div class="col-2">
-						<img class="w-100" src="../imagenes/logos/HAMASHIAJ4.jpg" alt="">
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<p class="text-center text">Copyright y demas</p>
-					</div>
-				</div>
-		</section>
-	</footer>
+    <section id="bajo">
+      <div class="container-fluid foter">
+        <div class="row">
+          <div class="col">
+            <h1 class="page-header">
+              Información de contacto
+            </h1>
+            <p>Email: elpapeme@gmail.com</p>
+            <p>Teléfono de contacto: 318 6943404</p>
+          </div>
+          <div class="col-2">
+            <ul class="icon">
+              <li> <a href="https://web.facebook.com/COMIDAFAMILIAFE"> <i class="fa fa-facebook"></i> </a> </li>
+              <li> <a href=""> <i class="fa fa-twitter"></i> </a> </li>
+              <li> <a href="https://www.gram.com/hamashiaj.food/?hl=es-la"> <i class="fa fa-instagram"></i> </a> </li>
+            </ul>
+            <div class="contact">
+              <a href="https://api.whatsapp.com/send?phone=573186943404&text=Hola%20Elda%20y%20Freddy%20tengo%20inter%C3%A9s%20en%20hacer%20un%20pedido%20a%20domicilio,%20mi%20nombre%20es">
+                <button class="btn btn-primary"> Contactanos</button>
+              </a>
+            </div>
+          </div>
+          <div class="col-2">
+            <img class="w-100" src="../imagenes/logos/HAMASHIAJ4.jpg" alt="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="text-center text">
+              Copyright y demas
+            </p>
+          </div>
+        </div>
+    </section>
+  </footer>
 </body>
 <script src="https://snapwidget.com/js/snapwidget.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

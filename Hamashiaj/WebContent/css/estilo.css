@@ -134,17 +134,6 @@ h2 {
 	width: 10vw;
 	height: auto;
 }
-/*#label !important{
-  border-style: solid;
-  border-width: 5px;
-}*/
-#Harburguesas, #Sandiwch, #picadas, #empaque, #otro_banner {
-	border-style: outset;
-}
-
-li a:hover {
-	background-color: orange;
-}
 
 .articulo {
 	margin: 60px 120px;
@@ -198,12 +187,4 @@ h3 {
 
 #footerArchivo iframe {
 	width: 100%;
-}
-
-.category_list .ct_item_active {
-	background: #FFB200;
-}
-
-#menu-registro-Producto {
-	background-color: rgba(251, 181, 1, 0.88);
 }

@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NamedQuery(name="Ingredientesplatillo.findAll", query="SELECT i FROM Ingredientesplatillo i")
 public class Ingredientesplatillo implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EmbeddedId
 	private IngredientesplatilloPK id;
 

@@ -48,9 +48,6 @@ public class IngredientePlatilloServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String action = request.getParameter("action");
 		switch (action) {
-		case "eliminar":
-			this.eliminar(request, response);
-			break;
 		case "mostrar":
 			this.showForm(request, response);
 			break;
@@ -92,21 +89,15 @@ public class IngredientePlatilloServlet extends HttpServlet {
 		Ingrediente ingre = ingreDAO.find(ingredienteId);
 		Platillo p = pDAO.find(platilloId);
 		Ingredientesplatillo i = new Ingredientesplatillo();
+		IngredientesplatilloPK pk=new IngredientesplatilloPK();
+		pk.setIngredienteId(ingredienteId);
+		pk.setPlatilloId(platilloId);
 		i.setIngrediente(ingre);
 		i.setPlatillo(p);
 		i.setPeso(peso);
+		i.setId(pk);
 		iDAO.insert(i);
 		request.getRequestDispatcher("registroIngredientePlatillo.jsp").forward(request, response);
-	}
-
-	protected void eliminar(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		//IngredientesplatilloPK id = request.getParameter("id");
-	//	IngredientesplatilloPK aux = (IngredientesplatilloPK) id;
-		//Ingredientesplatillo i = iDAO.find(aux);
-		//iDAO.delete(i);
-		// iDAO.delete();
-		request.getRequestDispatcher("listaIngredientePlatillo.jsp").forward(request, response);
 	}
 
 	protected void actualizar(HttpServletRequest request, HttpServletResponse response)
@@ -118,9 +109,13 @@ public class IngredientePlatilloServlet extends HttpServlet {
 		Ingrediente ingre = ingreDAO.find(ingredienteId);
 		Platillo p = pDAO.find(platilloId);
 		Ingredientesplatillo i = new Ingredientesplatillo();
+		IngredientesplatilloPK pk=new IngredientesplatilloPK();
+		pk.setIngredienteId(ingredienteId);
+		pk.setPlatilloId(platilloId);
 		i.setIngrediente(ingre);
 		i.setPlatillo(p);
 		i.setPeso(peso);
+		i.setId(pk);
 		// eDAO.update(obj);
 		iDAO.update(i);
 		request.getRequestDispatcher("listaIngredientePlatillo.jsp").forward(request, response);
@@ -129,7 +124,14 @@ public class IngredientePlatilloServlet extends HttpServlet {
 	protected void showForm(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+		Integer ingredienteId = Integer.parseInt(request.getParameter("ingredienteId"));
+		Integer platilloId = Integer.parseInt(request.getParameter("platilloId"));
+		IngredientesplatilloPK pk=new IngredientesplatilloPK();
+		pk.setIngredienteId(ingredienteId);
+		pk.setPlatilloId(platilloId);
+		Ingredientesplatillo i = new Ingredientesplatillo();
+		i.setId(pk);
+		Ingredientesplatillo iaux = new Ingredientesplatillo();
 		request.getRequestDispatcher("registroDomicilio.jsp").forward(request, response);
 		// response.sendRedirect("registroEmpleado.jsp");
 	}
