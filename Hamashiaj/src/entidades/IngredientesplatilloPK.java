@@ -20,13 +20,6 @@ public class IngredientesplatilloPK implements Serializable {
 
 	public IngredientesplatilloPK() {
 	}
-	
-	public IngredientesplatilloPK(int ingredienteId, int platilloId) {
-		super();
-		this.ingredienteId = ingredienteId;
-		this.platilloId = platilloId;
-	}
-
 	public int getIngredienteId() {
 		return this.ingredienteId;
 	}
@@ -61,6 +54,4 @@ public class IngredientesplatilloPK implements Serializable {
 		
 		return hash;
 	}
-	
-	
 }

@@ -38,7 +38,7 @@
     <label for="inputEmail3" class="col-sm-2 col-form-label">Cliente:</label>
     <div class="col-sm-10">
     <select class="form-control" id="exampleFormControlSelect1" name="cedula">
-    <option value = "${cliente.getCedula()}" > <c:out value="${cliente.persona.getNombre()} "/> </option>
+    <option value = "${orden.cliente.getCedula()}" > <c:out value="${orden.cliente.persona.getNombre()} "/> </option>
 		   <c:forEach items="${clienteDAO.list()}" var="cliente">
 				<option value="${cliente.cedula}" >
          <c:out value="${cliente.persona.getNombre()} "/>
@@ -52,7 +52,7 @@
     <label for="inputEmail3" class="col-sm-2 col-form-label">Chef:</label>
     <div class="col-sm-10">
     <select class="form-control" id="exampleFormControlSelect1" name="chefid">
-    <option value = "${chef.getId()}" ></option>
+    <option value = "${orden.chef.getId()}" > <c:out value="${orden.chef.empleado.persona.getNombre()} "/> </option>
 		   <c:forEach items="${chefDAO.list()}" var="chef">
 				<option value="${chef.id}" >
          <c:out value="${chef.empleado.persona.getNombre()} "/>
@@ -66,7 +66,7 @@
     <label for="inputEmail3" class="col-sm-2 col-form-label">Camarero:</label>
     <div class="col-sm-10">
     <select class="form-control" id="exampleFormControlSelect1" name="camareroid">
-    <option value = "${camarero.getId()}" > </option>
+    <option value = "${orden.camarero.getId()}" > <c:out value="${orden.camarero.empleado.persona.getNombre()} "/> </option>
 		   <c:forEach items="${camareroDAO.list()}" var="camarero">
 				<option value="${camarero.id}" >
          <c:out value="${camarero.empleado.persona.getNombre()} "/>
@@ -80,7 +80,7 @@
     <label for="inputEmail3" class="col-sm-2 col-form-label">Domicilio:</label>
     <div class="col-sm-10">
     <select class="form-control" id="exampleFormControlSelect1" name="domicilioid">
-    <option value = "${domicilio.getId()}" ></option>
+    <option value = "${orden.domicilio.getId()}" > <c:out value="${orden.domicilio.destino} "/></option>
 		   <c:forEach items="${domicilioDAO.list()}" var="domicilio">
 				<option value="${domicilio.id}" >
          <c:out value="${domicilio.destino}"/>
@@ -93,7 +93,7 @@
   <div class="form-group row">
     <div class="col-sm-10">
       <button type="submit" class="btn btn-primary">Registrar</button>
-     <a href="${pageContext.request.contextPath}/index/index.jsp" class="btn btn-primary">Volver</a>
+      <a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-primary">Volver</a>
     </div>
     </div>
   

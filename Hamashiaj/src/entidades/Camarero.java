@@ -10,11 +10,13 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="camarero")
 @NamedQuery(name="Camarero.findAll", query="SELECT c FROM Camarero c")
 public class Camarero implements Serializable {
 	private static final long serialVersionUID = 1L;
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
 	//bi-directional one-to-one association to Empleado

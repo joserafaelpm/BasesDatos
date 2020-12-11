@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import entidades.Ingrediente;
 import entidades.Ingredientesplatillo;
 import entidades.IngredientesplatilloPK;
+import entidades.Orden;
+import entidades.Ordenplatillo;
+import entidades.OrdenplatilloPK;
 import entidades.Platillo;
 import modelo.IngredientePlatilloDAO;
 import modelo.OrdenDAO;
@@ -82,17 +85,11 @@ public class OrdenplatilloServlet extends HttpServlet {
 			Integer ordenId = Integer.parseInt(request.getParameter("ordenId"));
 			Integer platilloId = Integer.parseInt(request.getParameter("platilloId"));
 			Float precio = Float.parseFloat(request.getParameter("precio"));
-			Ingrediente ingre = ingreDAO.find(ingredienteId);
+			Orden or = oDAO.find(ordenId);
 			Platillo p = pDAO.find(platilloId);
-			Ingredientesplatillo i = new Ingredientesplatillo();
-			IngredientesplatilloPK pk=new IngredientesplatilloPK();
-			pk.setIngredienteId(ingredienteId);
-			pk.setPlatilloId(platilloId);
-			i.setIngrediente(ingre);
-			i.setPlatillo(p);
-			i.setPeso(peso);
-			i.setId(pk);
-			iDAO.insert(i);
+			Ordenplatillo o = new Ordenplatillo();
+			OrdenplatilloPK pk=new OrdenplatilloPK();
+			
 			request.getRequestDispatcher("registroIngredientePlatillo.jsp").forward(request, response);
 		}
 
@@ -102,18 +99,7 @@ public class OrdenplatilloServlet extends HttpServlet {
 			Integer ingredienteId = Integer.parseInt(request.getParameter("ingredienteId"));
 			Integer platilloId = Integer.parseInt(request.getParameter("platilloId"));
 			Integer peso = Integer.parseInt(request.getParameter("peso"));
-			Ingrediente ingre = ingreDAO.find(ingredienteId);
-			Platillo p = pDAO.find(platilloId);
-			Ingredientesplatillo i = new Ingredientesplatillo();
-			IngredientesplatilloPK pk=new IngredientesplatilloPK();
-			pk.setIngredienteId(ingredienteId);
-			pk.setPlatilloId(platilloId);
-			i.setIngrediente(ingre);
-			i.setPlatillo(p);
-			i.setPeso(peso);
-			i.setId(pk);
-			// eDAO.update(obj);
-			iDAO.update(i);
+			
 			request.getRequestDispatcher("listaIngredientePlatillo.jsp").forward(request, response);
 		}
 

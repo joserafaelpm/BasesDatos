@@ -162,7 +162,7 @@ public class OrdenServlet extends HttpServlet {
 		Orden o = new Orden();
 		o.setId(id);
 		Orden aux = oDAO.find(o.getId());
-		request.getSession().setAttribute("cliente", aux);
+		request.getSession().setAttribute("orden", aux);
 		request.getRequestDispatcher("registroOrden.jsp").forward(request, response);
 		// response.sendRedirect("registroEmpleado.jsp");
 	}

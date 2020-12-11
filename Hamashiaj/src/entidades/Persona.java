@@ -10,6 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="persona")
 @NamedQuery(name="Persona.findAll", query="SELECT p FROM Persona p")
 public class Persona implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -26,11 +27,11 @@ public class Persona implements Serializable {
 	private String telefono;
 
 	//bi-directional one-to-one association to Cliente
-	@OneToOne(mappedBy="persona" ,fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne(mappedBy="persona",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Cliente cliente;
 
 	//bi-directional many-to-one association to Empleado
-	@OneToMany(mappedBy="persona", fetch = FetchType.LAZY, cascade = CascadeType.ALL )
+	@OneToMany(mappedBy="persona", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Empleado> empleados;
 
 	public Persona() {
