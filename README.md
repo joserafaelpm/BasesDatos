@@ -1,6 +1,6 @@
 # SONS OF ANARCHY 
 # Bases de Datos Hamashiaj
-link de la pagina: http://ec2-34-229-152-221.compute-1.amazonaws.com:8080/Hamashiaj/
+link de la pagina: http://ec2-3-90-213-123.compute-1.amazonaws.com:8080/Hamashiaj/
 
 ## Autores ✒️
 Ronald Eduardo Benitez Mejia 1151813
